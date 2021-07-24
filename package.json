@@ -1,5 +1,5 @@
 {
-  "name": "googlebooks-app",
+  "name": "google-books-search-engine",
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
@@ -11,7 +11,7 @@
     "heroku-postbuild": "cd client && npm run build"
   },
   "keywords": [],
-  "author": "Jada Desormeaux",
+  "author": "Michelle Watts",
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^5.1.0"
