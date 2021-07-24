@@ -4,6 +4,10 @@ const { AuthenticationError } = require('apollo-server-express');
 
 const resolvers = {
     Query: {
+        users: async () => {
+        return User.find();
+        },
+
         me: async (parent, args, context) => {
             if(context.user) {
                 const userData = await User.findOne({ _id: context.user._id })
@@ -46,7 +50,7 @@ const resolvers = {
             if (context.user) {
                 const updatedUser = await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $addToSet: { savedBooks: input } },
+                    { $push: { savedBooks: input } },
                     { new: true }
                 );
                 return updatedUser;
